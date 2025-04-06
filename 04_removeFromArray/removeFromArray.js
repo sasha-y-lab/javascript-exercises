@@ -1,10 +1,17 @@
 
 
 
-const removeFromArray = function(originalArrays, ...args) { //
+const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
    
-  originalArrays = [];
-  const normalArray = [].slice.call(args);
+   
+  let index = 2;
+ const originalArrays = [1, 2, 3, 4];
+ const removedArrays = [...originalArrays.slice(0, index), ...originalArrays.slice(index + 1)];
+  //const removedArrays = [].slice.call(remove);
+  arrays = originalArrays;
+  args = removedArrays;
+  
+  /*
   originalArrays.splice(0, 0, 4);
   //console.log(originalArrays);
   originalArrays.splice(0, 0, 2);
@@ -12,22 +19,37 @@ const removeFromArray = function(originalArrays, ...args) { //
   originalArrays.splice(1, 0, 3);
   //console.log(originalArrays);
   originalArrays.splice(0, 0, 1);
-  //console.log(originalArrays);
-  normalArray.splice(0, 0, 3);
+  console.log(originalArrays);
+  //normalArray.splice(0, 0, 3);
   //console.log(normalArray);
-
+*/
 
  // for (let i = 0; i < originalArrays.length; i++) {
- // for (const originalArray of originalArrays) {
+  //for (const originalArray of originalArrays) {
+//originalArrays.forEach((originalArray) => {
+  //removedArrays.splice(2, 1);
+  //console.log(removedArrays);
 
-if (!normalArray.includes(originalArrays)) {
+
+
+
+  //for (let i = 0; i >= originalArrays.length; i++) {
+
+   
 // if (Array.isArray([1, 2, 3, 4],[3])) {
   
-    originalArrays.splice(2, 1);
-    console.log(originalArrays);
+   // originalArrays.splice(2, 1);
+  
 // normalArray.splice(0, 1);
-// console.log(normalArray);
- // } 
+ 
+ //console.log(originalArray);
+ console.log(originalArrays);
+ console.log(removedArrays);
+ 
+ return removedArrays;
+ 
+}
+/*
  // its 124 = 14
  originalArrays.splice(1, 1);
  console.log(originalArrays);
@@ -53,7 +75,12 @@ originalArrays.splice(1, 1);
 originalArrays.splice(0, 0, 1);
 console.log(originalArrays);
  
-}
+
+*/
+
+//console.log(originalArrays);
+
+
 
 /*
   if (Array.isArray([1, 2, 4], [])) {
@@ -207,12 +234,12 @@ if (Array.isArray([1, 2, 3], ["1", 3])) {
 
 
 
-}
+//}
 
-removeFromArray();
+//removeFromArray();
 
 
 
 // Do not edit below this line
 
-//module.exports = removeFromArray;
+module.exports = removeFromArray;
