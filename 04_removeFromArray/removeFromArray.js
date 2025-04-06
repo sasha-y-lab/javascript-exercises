@@ -1,63 +1,55 @@
-const removeFromArray = function() {
+const originalArrays = [];
+//const objValue = {};
+
+const removeFromArray = function(...args) {
    
-   let counter = 1;
+  
+  const normalArray = [].slice.call(args);
+  
+
    
-   let arrayX = ["hey", 1, 2, 3, 4, "ho"];  
-   let value = ["hey", 1, 2, 3, 4, 7, "tacos", "1"];
+//["hey", 1, 2, 3, 4, "ho"], ["hey", 1, 2, 3, 4, 7, "tacos", "1"]]
+   
+  //Given the collection originalArrayX, get the first item in the collection. = 1
+  //Assign it to the variable arraxyX and then run the code between the curly braces {}.
+  //Get the next item, and repeat (2) until you've reached the end of the collection.
+  // it's code should say check if the item is equal to the number being removed.
+  // if it does, then remove it. if it doesn't, do nothing. OR if it needs to be replaced, replace it.
+  originalArrays.forEach((originalArray) => {
+  
+
+if (!normalArray.includes(originalArray)) { 
+  
+  originalArrays.push(1);
+    originalArrays.push(2);
+    originalArrays.push(3);
+    originalArrays.push(4);
+  
+ 
+   // originalArrays.push(objValue);
 
 
-           let combinedArrays = arrayX.concat(value); // [hey', 1, 2, 3, 4, 'ho', 'hey', 1, 2, 3, 4, 7, 'tacos', '1']
 
-           console.log(combinedArrays);
-
-           let arrayWithoutX = combinedArrays
-           
-           
-           /*
-           
-           .filter (function (numStringX) {
-           
-
-           while (counter <= 8) {
-            counter++;
+ // originalArrays.pop(3);
+  
+}
+return originalArrays;
+}); 
 
 
-            if (counter === 1) {
-                return console.log(numStringX !== 3);
+ 
+ 
 
-            } else if (counter === 2) {
-                return console.log(numStringX !== 3 && numStringX !== 2);
+ 
 
-            } else if (counter === 3) {
-                return numStringX !== 2;
 
-           } else if (counter === 4) {
-             return numStringX !== 7 && numStringX !== "tacos";
-           }
-           else if (counter === 5) {
-            return numStringX !== 2 && numStringX !== 7; 
 
-           } else if (counter === 6) {
-            return numStringX !== 1 && numStringX !== 2 && numStringX !== 3 && numStringX !== 4; 
 
-           } else if (counter === 7) {
-            return numStringX !== 3 && numStringX !== "hey"; 
 
-           } else if (counter === 8) {
-            return numStringX !== "1" && numStringX !== 3; 
-
-           } else {
-            return;
-           }
-           
-      } 
-    }) 
-    
-    return arrayWithoutX; */
-}; 
+}
 
 
 
 // Do not edit below this line
 
- module.exports = removeFromArray;
+module.exports = removeFromArray;
