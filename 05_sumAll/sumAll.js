@@ -38,36 +38,31 @@ console.log(i);
                
                 //let min = startValue
                 //let max = endValue;
-
-               
+                
+                
                for (let k = Math.min(startValue, endValue); k <= Math.max(startValue, endValue); k++) {
-                finalSum += k;
+                let intergerStatus = Math.sign(startValue);
+                if (intergerStatus === 1) {
+                finalSum += k;      
+          
+             
+
+             if (intergerStatus === -1){
+                return "ERROR";
                }
-                        
-
-            console.log(finalSum);
-            return finalSum; 
-
-
-/* not sure if this works
-          // if (inputValue > startValue && inputValue < endValue) { // checks between numbers
-
-         //   let missingMiddleValues = true;
-
-          //  if (missingMiddleValues) {
-
-                // add 
-          //  }
+             
+               } console.log(finalSum);
+               return finalSum;
+            } 
+      
 
             
-         //  }
+        }  
 
-         */
-          
-        } else {
-            return "ERROR";
-        }
-    }
+        
+    
+
+    } 
 
 }
 
@@ -77,7 +72,7 @@ console.log(i);
 sumAll(2, 4); // equals 9 (2 + 3 + 4)
 sumAll(1, 4000); // equals 8002000
 sumAll(123, 1); // equals 7626
-
+sumAll(-10, 4); // equals ERROR
 
 // Do not edit below this line
-module.exports = sumAll;
+//module.exports = sumAll;
