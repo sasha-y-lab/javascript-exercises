@@ -33,33 +33,40 @@ console.log(i);
             const endValue = inputValue[inputValue.length - 1]; // starts at the last value
             console.log(endValue);
 
-            
+            function onlyPositiveStartValues(startValue, endValue) {
+                
+                 minStartValue = Math.min(startValue, endValue); 
+                 maxStartValue = Math.max(startValue, endValue);     
+                
                 let finalSum = 0;
                
                 //let min = startValue
                 //let max = endValue;
+                if (Math.sign(minStartValue) === 1) {
                 
+               for (let k = minStartValue; k <= maxStartValue; k++) {
                 
-               for (let k = Math.min(startValue, endValue); k <= Math.max(startValue, endValue); k++) {
-                let intergerStatus = Math.sign(startValue);
-                if (intergerStatus === 1) {
                 finalSum += k;      
           
-             
-
-             if (intergerStatus === -1){
-                return "ERROR";
-               }
-             
-               } console.log(finalSum);
-               return finalSum;
+               console.log(finalSum);
+               
             } 
       
-
-            
-        }  
+            } else { 
+                for (let k = minStartValue; k <= maxStartValue; k++) {
+                
+                    finalSum = "ERROR";     
+              
+                   console.log(finalSum);
+                
+               } 
+            }
+            return finalSum;
+            } // end of function
+            onlyPositiveStartValues(); 
 
         
+        }
     
 
     } 
