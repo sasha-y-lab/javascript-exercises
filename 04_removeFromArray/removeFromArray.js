@@ -7,21 +7,31 @@ const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
   
   console.log(arrays);
 
-  arrays.splice(0, 0, 1);
-  arrays.splice(1, 0, 2);
-   arrays.splice(2, 0, 3);
-  arrays.splice(3, 0, 4);
-  //arrays.splice(4, 0, "hey");
-  //arrays.splice(5, 0, "ho");
-  console.log(arrays);
+ // arrays.splice(0, 0, 1);
+ // arrays.splice(1, 0, 2);
+  // arrays.splice(2, 0, 3);
+  //arrays.splice(3, 0, 4);
+
+ 
  
   
-  const removedArrays = [...originalArrays.filter(array => array !== 1 + 2)];
- 
+  const removedArrays = [];
+  removedArrays.splice(0, 0, 1);
+  removedArrays.splice(1, 0, 2);
+   removedArrays.splice(2, 0, 3);
+  removedArrays.splice(3, 0, 4);
+
   args = removedArrays;
   arrays = args;
+
+
   console.log(args);
-  
+  console.log(arrays);
+
+removedArrays.splice(2, 1);
+console.log(args);
+console.log(arrays);
+
   for (i = arrays.length - 1; i >= 0; i--) { // you are looping backwards to avoid shifting. 
   const allElements = (array) => array >= 1 && array <= 4;
   if (arrays.some(allElements)) { // this is true. the array = numbers 1 - 4
