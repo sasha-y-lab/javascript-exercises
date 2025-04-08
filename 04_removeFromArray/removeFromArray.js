@@ -1,86 +1,51 @@
 
 
 
-const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
-  const originalArrays = [];
-  arrays = originalArrays;
+const removeFromArray = function(arrays, ...removedArgsValues) { 
   
-  console.log(arrays);
+const startingArray = arrays;
+let inputValue = removedArgsValues;
+const newArray = [];
 
- // arrays.splice(0, 0, 1);
- // arrays.splice(1, 0, 2);
-  // arrays.splice(2, 0, 3);
-  //arrays.splice(3, 0, 4);
+for (j = startingArray.length - 1; j >= 0; j--) { // loops the array backwards starting from the last element as to not shift the array when removing elements
 
- 
- 
-  
-  const removedArrays = [];
-  removedArrays.splice(0, 0, 1);
-  removedArrays.splice(1, 0, 2);
-   removedArrays.splice(2, 0, 3);
-  removedArrays.splice(3, 0, 4);
+let shouldKeep = true; // keep an array element
 
-  args = removedArrays;
-  arrays = args;
+  for (i = inputValue.length - 1; i >=0; i--) { // loops the arguments backwards starting from the last value to not shift it when removing
 
+    if (startingArray[j] === inputValue[i]) { // checks if the array element is equal to arg value
 
-  console.log(args);
-  console.log(arrays);
+      shouldKeep = false; // do not keep an array element
+      break;
+    }
 
+  }
 
-  
-  
-  const allElements = (array) => array >= 1 && array <= 4;
-  if (arrays.some(allElements)) { // this is true. the array = numbers 1 - 4
-  
- 
+  if (shouldKeep) { // if shouldKeep is true
 
-      
-    for (let i = arrays.length - 1; i >= 0; i--) { // you are looping backwards to avoid shifting. 
-      
-      for (let j = 0; j < 2; j++) {
-      console.log(i);
-      args.splice(...args.filter(array => array !== i-- - 2));
-    
-    console.log(i);
-   
-    console.log(arrays);
-    console.log(args);
-    //return args; // do not return. it ends the loop
-      }
-    /*
-    for (let j = 0; j < 5; j++) {
-      console.log(i);
-      args.splice(...args.filter(array => array !== i-- - 2));
-    
-    console.log(i);
-   
-    console.log(arrays);
-    console.log(args);
-    return args; // do not return. it ends the loop
+      newArray.unshift(startingArray[j]); // pushing the new array element from the front of the array not back
+  }
 
-    } // end of second for loop
-    console.log(arrays);
-    console.log(args);
-return args; // do not return it ends the loop
- */     
-    } // end of for loop
-    console.log(args);
-console.log(arrays);
-return args;
+}
 
- 
-  } //end of if
- // console.log(args);
- // console.log(arrays);
- // return args;
-  
+  return newArray; // this keeps the value of the newArray, and updates through each iteration
 } // end
   
-  
+  removeFromArray([1, 2, 3, 4], 3); //[1, 2, 4]
 
-//removeFromArray();
+  removeFromArray([1, 2, 3, 4], 3, 2); // [1, 4]
+
+  removeFromArray([1, 2, 2, 3], 2); // [1, 3]
+
+  removeFromArray([1, 2, 3, 4], 7, "tacos"); // [1, 2, 3, 4]
+
+  removeFromArray([1, 2, 3, 4], 7, 2); // [1, 3, 4]
+
+  removeFromArray([1, 2, 3, 4], 1, 2, 3, 4) // []
+
+  removeFromArray(["hey", 2, 3, "ho"], "hey", 3); // [2, "ho"]
+
+  removeFromArray([1, 2, 3], "1", 3); // [1, 2]
 
 
 
