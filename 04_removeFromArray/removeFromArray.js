@@ -37,8 +37,9 @@ const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
  
 
       
-    for (let i = arrays.length - 1; i < 5; i--) { // you are looping backwards to avoid shifting. 
+    for (let i = arrays.length - 1; i >= 0; i--) { // you are looping backwards to avoid shifting. 
       
+      for (let j = 0; j < 2; j++) {
       console.log(i);
       args.splice(...args.filter(array => array !== i-- - 2));
     
@@ -46,7 +47,9 @@ const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
    
     console.log(arrays);
     console.log(args);
-  
+    //return args; // do not return. it ends the loop
+      }
+    /*
     for (let j = 0; j < 5; j++) {
       console.log(i);
       args.splice(...args.filter(array => array !== i-- - 2));
@@ -55,13 +58,13 @@ const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
    
     console.log(arrays);
     console.log(args);
-    return args;
+    return args; // do not return. it ends the loop
 
     } // end of second for loop
     console.log(arrays);
     console.log(args);
-return args;
-      
+return args; // do not return it ends the loop
+ */     
     } // end of for loop
     console.log(args);
 console.log(arrays);
@@ -69,9 +72,9 @@ return args;
 
  
   } //end of if
-  console.log(args);
-  console.log(arrays);
-  return args;
+ // console.log(args);
+ // console.log(arrays);
+ // return args;
   
 } // end
   
