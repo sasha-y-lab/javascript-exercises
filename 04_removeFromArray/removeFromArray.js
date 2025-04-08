@@ -14,53 +14,67 @@ const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
   //arrays.splice(4, 0, "hey");
   //arrays.splice(5, 0, "ho");
   console.log(arrays);
-
-
-  arrays.forEach((array) => { 
-  let i = args.indexOf(array) // array index starts at -1 which is the last array which is 4
-  console.log(i);
+ 
   
   
 
-  if (i < arrays.length) {
-    i++; // now array is 0
+  for (i = arrays.length - 1; i >= 0; i--) { // you are looping backwards to avoid shifting. 
+  
+    const removedArrays = [...originalArrays.filter(array => array !== i)];  // remove 1 value at index #3
+    args = removedArrays;
+    arrays = args;
+        
+  console.log(arrays);
+  console.log(args);
+
     console.log(i);
     const allElements = (array) => array >= 1 && array <= 4;
     
-    console.log(arrays.some(allElements));
+    console.log(arrays.some(allElements)); // this is true. the array = numbers 1 - 4
 
     if (arrays.some(allElements)) {
-      
-      // now remove the matching elements
-      const removedArrays = [...originalArrays.filter(array => array !== i)]; // what do i want to say array does not equal
+      // if array = numbers 1 - 4
+      // remove the matching elements, one by one
+      args.splice(...arrays.filter(array => array !== i));
+          
+/* 
+     if (JSON.stringify(arrays) === JSON.stringify(removedArrays)) {
+      args.splice(...arrays.filter(array => array !== i));
+     // args.splice(...arrays.filter(array => array !== i++));
+      //console.log(args.splice(...removedArrays.filter(array => array !== i++))); do not uncomment - it repeats the action
+      console.log(arrays);
+      console.log(args);
+    return args;
+     } */
 
-    args = removedArrays;
-    arrays = args;
      console.log(arrays);
      console.log(args);
-     
-    return removedArrays;
- 
+
+    return args;
+      
     } 
     
+    
+  
+    
     console.log(args);
+    console.log(arrays);
     return args;
   } // end of first if
   
-  console.log(args);
-  return args;
-  }); // for loop end
+
  
   console.log(args);
+  console.log(arrays);
 return args;
 } // end
   
   
 
-removeFromArray();
+//removeFromArray();
 
 
 
 // Do not edit below this line
 
-//module.exports = removeFromArray;
+module.exports = removeFromArray;
