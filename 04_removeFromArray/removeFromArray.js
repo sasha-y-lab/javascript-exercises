@@ -2,54 +2,49 @@
 
 
 const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
-   
-  /* 
-  let index = 2;
- const originalArrays = [1, 2, 3, 4];
- const removedArrays = [...originalArrays.slice(0, index), ...originalArrays.slice(index + 1)];
-  //const removedArrays = [].slice.call(remove);
+  const originalArrays = [];
   arrays = originalArrays;
-  args = removedArrays;
-  */
-  let i = 2;
-  let index = i;
-  const originalArrays = [1, 2, 3, 4];
-let start = 2;
-
-   
- 
-  arrays = originalArrays;
+  
   console.log(arrays);
 
+  arrays.splice(0, 0, 1);
+  arrays.splice(1, 0, 2);
+   arrays.splice(2, 0, 3);
+  arrays.splice(3, 0, 4);
+  console.log(arrays);
 
-  arrays.forEach((removedArrays) => {
-     removedArrays = [...originalArrays.slice(start, index), ...originalArrays.slice(index + 1)];
-     console.log(removedArrays);
-     args = removedArrays;
-      console.log(arrays);
-      console.log(i);
-      console.log(args);
- console.log(index);
-      if (arrays.length [i] === args) {
-        console.log(i);
-        arrays.splice(i, 0, i);
-        console.log(arrays);
-        i--;
-        console.log(i);
-        console.log(originalArrays);
- console.log(args);
-      }
-
-
+  arrays.forEach((array) => {
+    let index = args.indexOf(array);
     
-  });
-  console.log(originalArrays);
-  console.log(args);
-  
-  return args;
-  
- }
 
+  if (index === -1) {
+    let indexInside = 2;
+    const removedArrays = [...originalArrays.slice(0, indexInside), ...originalArrays.slice(indexInside + 1)];
+    //let removedArrays;
+    // args = removedArrays;
+    args = removedArrays;
+    arrays = args;
+     console.log(arrays);
+     console.log(args);
+     console.log(args.indexOf(array));
+
+    if (indexInside === 2) {
+      args = [...originalArrays.slice(0, indexInside - 1), ...originalArrays.slice(indexInside + 1)]; // ignore this removes 2 & 3
+      console.log(args);
+      console.log(args.indexOf(array));
+      return removedArrays
+    }
+    return removedArrays
+
+
+
+} // first if
+
+console.log(args);
+  }); //end of for each 
+console.log(args);
+  //return removedArrays;
+}
   
   
 
