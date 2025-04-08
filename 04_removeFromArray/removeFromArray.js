@@ -16,57 +16,36 @@ const removeFromArray = function(arrays, ...args) { // // arrays, ...remove
   console.log(arrays);
  
   
-  
-
-  for (i = arrays.length - 1; i >= 0; i--) { // you are looping backwards to avoid shifting. 
-  
-    const removedArrays = [...originalArrays.filter(array => array !== i)];  // remove 1 value at index #3
-    args = removedArrays;
-    arrays = args;
-        
-  console.log(arrays);
-  console.log(args);
-
-    console.log(i);
-    const allElements = (array) => array >= 1 && array <= 4;
-    
-    console.log(arrays.some(allElements)); // this is true. the array = numbers 1 - 4
-
-    if (arrays.some(allElements)) {
-      // if array = numbers 1 - 4
-      // remove the matching elements, one by one
-      args.splice(...arrays.filter(array => array !== i));
-          
-/* 
-     if (JSON.stringify(arrays) === JSON.stringify(removedArrays)) {
-      args.splice(...arrays.filter(array => array !== i));
-     // args.splice(...arrays.filter(array => array !== i++));
-      //console.log(args.splice(...removedArrays.filter(array => array !== i++))); do not uncomment - it repeats the action
-      console.log(arrays);
-      console.log(args);
-    return args;
-     } */
-
-     console.log(arrays);
-     console.log(args);
-
-    return args;
-      
-    } 
-    
-    
-  
-    
-    console.log(args);
-    console.log(arrays);
-    return args;
-  } // end of first if
-  
-
+  const removedArrays = [...originalArrays.filter(array => array !== 1 + 2)];
  
+  args = removedArrays;
+  arrays = args;
+  console.log(args);
+  
+  for (i = arrays.length - 1; i >= 0; i--) { // you are looping backwards to avoid shifting. 
+  const allElements = (array) => array >= 1 && array <= 4;
+  if (arrays.some(allElements)) { // this is true. the array = numbers 1 - 4
+    console.log(i);
+    
+    
+    args.splice(...arrays.filter(array => array !== i++ + 2));
+    
+   
+    console.log(arrays);
+    console.log(args);
+  
+    
+return args;
+      
+    } // end of if
+    console.log(args);
+console.log(arrays);
+return args;
+  } //end of for loop
   console.log(args);
   console.log(arrays);
-return args;
+  return args;
+  
 } // end
   
   
