@@ -1,4 +1,4 @@
-const sumAll = function(...argValues) {
+const sumAll = function(a, b) {
 
 // Implement a function that takes 2 positive integers and 
 // returns the sum of every integer between (and including) them
@@ -6,7 +6,7 @@ const sumAll = function(...argValues) {
 // pseudo code
 
 //SEQUENCE
-//SET inputValue to equal ...argValues;
+//SET inputValue to equal ...argValues; - this is now 2 separate args, a,b
 // use a for loop 
 // SET for loop to iterate through the input values, forward
 // THEN check if the input values are positive numbers which means greater than zero
@@ -15,63 +15,40 @@ const sumAll = function(...argValues) {
 // Then return that value
 // IF not true, return ERROR
 
-inputValue = argValues;
+let startValue = a;
+let endValue = b;
 
-for (i = inputValue.length - 1; i >= 0; i++) { // loops through values forwards
-console.log(i);
+let finalSum = 0;
 
+// now check if a, a primitive number, is an integer or b, a primitive number  is an integer and if both are non numbers.
 
-    if (inputValue[i] > 0) { // if the input value is greater than zero
-        let positiveInterger = true; // then it is a positive interger
-
-        if (positiveInterger) { // if it is a positive ineteger
-            // identify start input value and end input values
-            // find the numbers between and let it equal missingMiddleValues 
-            const startValue = inputValue[0]; // starts at the index 0, the first value
-            console.log(startValue);
-            
-            const endValue = inputValue[inputValue.length - 1]; // starts at the last value
-            console.log(endValue);
-
-            function onlyPositiveStartValues(startValue, endValue) {
-                
-                 minStartValue = Math.min(startValue, endValue); 
-                 maxStartValue = Math.max(startValue, endValue);     
-                
-                let finalSum = 0;
-               
-                //let min = startValue
-                //let max = endValue;
-                if (Math.sign(minStartValue) === 1) {
-                
-               for (let k = minStartValue; k <= maxStartValue; k++) {
-                
-                finalSum += k;      
-          
-               console.log(finalSum);
-               
-            } 
-      
-            } else { 
-                for (let k = minStartValue; k <= maxStartValue; k++) {
-                
-                    finalSum = "ERROR";     
-              
-                   console.log(finalSum);
-                
-               } 
-            }
-            return finalSum;
-            } // end of function
-            onlyPositiveStartValues(); 
-
-        
-        }
+if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+ // if the input value is less than zero, return error, if greater than zero continue
+ if (startValue < 0 || endValue < 0) return "ERROR";
+// if first input is smaller than second, add normally. If larger than second still add, but in order from largest to smallest
+ if (startValue <= endValue) {
     
+    // start looping through integers between startValue and endValue forwards
+    for (let i = startValue; i <= endValue; i++) {
+        finalSum += i;
+    }
 
-    } 
+ } else if (startValue >= endValue) {
 
+    // start looping throgh intergers if endValue and startvalue are switched
+   // reverse the first loop in the other if statement
+    for (let i = endValue; i <= startValue; i++) {
+        finalSum += i;
+    }
+
+ }
+
+} else {
+    return "ERROR";
 }
+
+return finalSum;
+            
 
 
 };
@@ -82,4 +59,4 @@ sumAll(123, 1); // equals 7626
 sumAll(-10, 4); // equals ERROR
 
 // Do not edit below this line
-//module.exports = sumAll;
+module.exports = sumAll;
