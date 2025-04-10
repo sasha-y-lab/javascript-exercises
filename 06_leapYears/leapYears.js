@@ -8,24 +8,19 @@ const leapYears = function(year) {
 let result;
 
 // if year is divisible by 4 and has no remainder
-if (year % 4 === 0) {
- 
+// divisible by 100 are century years
+
+
+if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0)) {
     result = true;
-
-}
-
-if (year % 100 === 0) {
+} else {
     result = false;
-
-    
-} else if (year % 100 === 0 && year % 400 === 0) {
-    result = true;
 }
  return result;
 };
 
 leapYears(1996); // true
-
+leapYears(1997); // false
 
 // Do not edit below this line
 module.exports = leapYears;
