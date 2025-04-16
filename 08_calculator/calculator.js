@@ -6,8 +6,19 @@ const subtract = function(num1, num2) {
 	return num1 - num2;
 };
 
-const sum = function() {
-	
+const sum = function([...array]) {
+ //let nums; // doesn't read value
+  //array = nums; //doesn't work
+ 
+//array.unshift(...nums); // doesn't work
+
+  let sum = array.reduce((total, nums) => {
+    return total + nums;
+  }, 0);
+
+  //console.log(sum);
+  return sum;
+
 };
 
 const multiply = function() {
@@ -30,6 +41,9 @@ add(2, 6);
 subtract(10, 4);
 subtract(-10, -4);
 subtract(-8, 7);
+
+sum([]);
+sum([7]);
 
 // Do not edit below this line
 module.exports = {
