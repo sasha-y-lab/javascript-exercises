@@ -44,6 +44,8 @@ subtract(-8, 7);
 
 sum([]);
 sum([7]);
+sum([7, 11]);
+sum([1, 3, 5, 7, 9]);
 
 // Do not edit below this line
 module.exports = {
