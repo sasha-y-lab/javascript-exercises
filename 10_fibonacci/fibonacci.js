@@ -8,6 +8,9 @@ const fibonacci = function(n) {
    //if (n === 1) return 1;
 
    if (n === 1 || n === 2) return 1; // these are defined already, no need for calc
+   if (n === 0) return 0;
+   
+
 
    let num1;
    let num2;
@@ -22,9 +25,9 @@ const fibonacci = function(n) {
        num1 = num2;
        num2 = fibNum;
 
-       console.log(`i: ${i}, fibNum: ${fibNum}`);
+       //console.log(`i: ${i}, fibNum: ${fibNum}`);
    }
-console.log(num2);
+//console.log(num2);
    return num2;
 
   // fibonnaci = (num1 - 1) + (num2 - 2) and is is valid for num > 2
